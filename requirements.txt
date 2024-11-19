@@ -6,3 +6,7 @@ transformers
 wordcloud
 matplotlib
 regex
+torch  # PyTorch
+sentencepiece  # For Hugging Face models
+protobuf  # For model loading
+
