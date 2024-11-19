@@ -7,3 +7,5 @@ wordcloud
 matplotlib
 regex
 torch  # PyTorch
+sentencepiece  # Required for some Hugging Face models
+protobuf  # Required for Hugging Face model loading
