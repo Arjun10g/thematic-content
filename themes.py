@@ -10,11 +10,15 @@ import matplotlib.pyplot as plt
 import nltk
 from nltk import word_tokenize, pos_tag
 
+
+
+
 # Initialize the zero-shot classification pipeline
 classifier = pipeline(
     "zero-shot-classification",
     model="facebook/bart-large-mnli",
-    framework="pt"  # Forces PyTorch usage
+    framework="pt",  # Forces PyTorch usage
+    device=0  # Use CPU (device=0 ensures fallback)
 )
 
 # Download necessary NLTK resources
@@ -27,7 +31,7 @@ nltk.download('averaged_perceptron_tagger')  # Required for POS tagging
 sentiment_analyzer = SentimentIntensityAnalyzer()
 
 # Hugging Face summarization pipeline
-summarizer = pipeline("summarization", model="facebook/bart-large-cnn", framework="pt")
+summarizer = pipeline("summarization", model="facebook/bart-large-cnn", framework="pt",device=0 )
 
 # Default data
 default_documents = [
@@ -251,3 +255,4 @@ if run:  # Execute only when the Run button is clicked
 # pwd
 # cd "/Users/arjunghumman/Downloads/VS Code Stuff/Python/Thematic Identifier"
 # streamlit run themes.py
+
