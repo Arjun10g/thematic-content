@@ -1,6 +1,5 @@
 import streamlit as st
 import pandas as pd
-import torch
 from sklearn.feature_extraction.text import TfidfVectorizer, CountVectorizer
 from sklearn.decomposition import LatentDirichletAllocation, NMF
 from sklearn.cluster import KMeans
