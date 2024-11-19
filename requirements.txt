@@ -1,12 +1,11 @@
-streamlit
-pandas
-scikit-learn
-nltk
-transformers
-wordcloud
-matplotlib
-regex
-torch  # PyTorch
-sentencepiece  # For Hugging Face models
-protobuf  # For model loading
-tensorflow
+streamlit==1.40.1
+pandas==2.2.3
+scikit-learn==1.5.2
+nltk==3.9.1
+transformers==4.46.3
+wordcloud==1.9.4
+matplotlib==3.9.2
+regex==2024.11.6
+torch==2.5.1  # Compatible PyTorch version
+sentencepiece==0.2.0
+protobuf==5.28.3

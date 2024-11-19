@@ -11,23 +11,23 @@ import nltk
 from nltk import word_tokenize, pos_tag
 
 # Initialize the zero-shot classification pipeline
-classifier = pipeline("zero-shot-classification", model="facebook/bart-large-mnli")
+classifier = pipeline(
+    "zero-shot-classification",
+    model="facebook/bart-large-mnli",
+    framework="pt"  # Forces PyTorch usage
+)
 
 # Download necessary NLTK resources
 nltk.download('vader_lexicon')
 nltk.download('averaged_perceptron_tagger')  # Required for POS tagging
 
-try:
-    classifier = pipeline("zero-shot-classification", model="facebook/bart-large-mnli", device=-1)
-    summarizer = pipeline("summarization", model="facebook/bart-large-cnn", device=-1)
-except Exception as e:
-    st.error(f"Error loading Hugging Face models: {e}")
+
 
 # Load necessary models
 sentiment_analyzer = SentimentIntensityAnalyzer()
 
 # Hugging Face summarization pipeline
-summarizer = pipeline("summarization", model="facebook/bart-large-cnn")
+summarizer = pipeline("summarization", model="facebook/bart-large-cnn", framework="pt")
 
 # Default data
 default_documents = [
