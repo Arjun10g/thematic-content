@@ -6,3 +6,4 @@ transformers
 wordcloud
 matplotlib
 regex
+torch  # PyTorch
