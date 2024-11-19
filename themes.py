@@ -17,6 +17,12 @@ classifier = pipeline("zero-shot-classification", model="facebook/bart-large-mnl
 nltk.download('vader_lexicon')
 nltk.download('averaged_perceptron_tagger')  # Required for POS tagging
 
+try:
+    classifier = pipeline("zero-shot-classification", model="facebook/bart-large-mnli", device=-1)
+    summarizer = pipeline("summarization", model="facebook/bart-large-cnn", device=-1)
+except Exception as e:
+    st.error(f"Error loading Hugging Face models: {e}")
+
 # Load necessary models
 sentiment_analyzer = SentimentIntensityAnalyzer()
 
